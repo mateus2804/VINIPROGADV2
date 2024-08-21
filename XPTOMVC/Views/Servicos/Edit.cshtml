@@ -1,0 +1,34 @@
+﻿@model XPTOMVC.Models.Servico
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2></h2>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div class="form-group">
+                <input type="hidden" asp-for="Id"/>
+                <label asp-for="Titulo" class="control-label"></label>
+                <input asp-for="Titulo" class="form-control"></input>
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+                <label asp-for="Descricao" class="control-label"></label>
+                <textarea asp-for="Descricao" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Editar" class="btn btn-default" />
+                <a asp-action="Index">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

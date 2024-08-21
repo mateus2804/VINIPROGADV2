@@ -1,0 +1,58 @@
+﻿@model XPTOMVC.Models.ViewModels.OSFormView
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2></h2>
+
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="OS.ServicoId" class="control-label"></label>
+                <select asp-for="OS.ServicoId" asp-items="@(new SelectList(Model.Servicos,"Id","Titulo"))" class="form-control">
+                    <option value="">-- Selecione um Serviço --</option>
+                </select>
+                <span asp-validation-for="OS.ServicoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OS.ClienteId" class="control-label"></label>
+                <select asp-for="OS.ClienteId" asp-items="@(new SelectList(Model.Clientes,"Id","Nome"))" class="form-control">
+                    <option value="">-- Selecione um Cliente --</option>
+                </select>
+                <span asp-validation-for="OS.ClienteId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OS.PrestadorServicoId" class="control-label"></label>
+                <select asp-for="OS.PrestadorServicoId" asp-items="@(new SelectList(Model.PrestadorServico,"Id","Nome"))" class="form-control">
+                    <option value="">-- Selecione um Prestador --</option>
+                </select>
+                <span asp-validation-for="OS.PrestadorServicoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OS.ValorServico" class="control-label"></label>
+                <input asp-for="OS.ValorServico" class="form-control" />
+                <span asp-validation-for="OS.ValorServico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OS.DataExecucao" class="control-label"></label>
+                <input asp-for="OS.DataExecucao" class="form-control" />
+                <span asp-validation-for="OS.DataExecucao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

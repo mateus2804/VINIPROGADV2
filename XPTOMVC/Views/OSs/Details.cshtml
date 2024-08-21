@@ -1,0 +1,48 @@
+﻿@model XPTOMVC.Models.OS
+
+@{
+	ViewData["title"] = "Details";
+}
+
+<h2></h2>
+
+
+<hr />
+<div>
+	<dl class="dl-vertical">
+		<dt>
+			@Html.DisplayNameFor(model => model.Servico.Titulo)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Servico.Titulo)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.Cliente.Nome)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Cliente.Nome)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.PrestadorServico.Nome)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.PrestadorServico.Nome)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.ValorServico)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.ValorServico)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.DataExecucao)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.DataExecucao)
+		</dd>
+	</dl>
+</div>
+<div>
+	<a asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
+	<a asp-action="Index">Cancelar</a>
+</div>

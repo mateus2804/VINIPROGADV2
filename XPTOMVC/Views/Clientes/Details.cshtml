@@ -1,0 +1,29 @@
+﻿@model XPTOMVC.Models.Cliente
+
+@{
+	ViewData["title"] = "Details";
+}
+
+<h2></h2>
+
+<hr />
+<div>
+	<dl class="dl-vertical">
+		<dt>
+			@Html.DisplayNameFor(model => model.Nome)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Nome)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.CNPJ)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.CNPJ)
+		</dd>
+	</dl>
+</div>
+<div>
+	<a asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
+	<a asp-action="Index">Cancelar</a>
+</div>

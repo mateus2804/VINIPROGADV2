@@ -1,0 +1,40 @@
+﻿@model IEnumerable<XPTOMVC.Models.Servico>
+
+@{
+    ViewData["Title"] = "Servicos";
+}
+<h2></h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-default">Registrar Serviço</a>
+</p>
+
+<table class="table table-striped table-hover">
+    <thead class="success">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(ModelItem => item.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(ModelItem => item.Descricao)
+                </td>
+                <td><a asp-action="Edit" asp-route-id="@item.Id">Editar</a></td>
+                <td><a asp-action="Details" asp-route-id="@item.Id" class="datails-service">Detalhes</a></td>
+                <td><a asp-action="Delete" asp-route-id="@item.Id" class="delete-service">Excluir</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
