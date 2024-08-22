@@ -15,6 +15,5 @@ namespace XPTOMVC.Models
         [Required]
 		[RegularExpression(@"\d{3}\.\d{3}\.\d{3}-\d{2}", ErrorMessage = "O CNPJ deve estar no formato 000.000.000-00.")]
 		public string CPF { get; set; }
-        List<OS> OSs { get; set; }
     }
 }
