@@ -41,7 +41,7 @@ namespace XPTOMVC
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<XPTOMVCContext>(options =>
-                    options.UseMySql(Configuration.GetConnectionString("XPTOMVCContext"), builder =>
+                    options.UseMySql(Environment.GetEnvironmentVariable("ConnectionStrings__XPTOMVCContext"), builder =>
                     builder.MigrationsAssembly("XPTOMVC")));
 
             services.AddScoped<ServicoService>();
