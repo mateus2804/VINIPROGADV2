@@ -68,7 +68,7 @@ namespace XPTOMVC
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/OSs/Error");
                 app.UseHsts();
             }
 

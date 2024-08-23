@@ -147,7 +147,6 @@ namespace XPTOMVC.Controllers
             ViewData["minDate"] = minDate.Value.ToString("yyyy-MM-dd");
             ViewData["maxDate"] = maxDate.Value.ToString("yyyy-MM-dd");
             var result = await _osservice.FindByDateAsync(minDate, maxDate);
-            //var finalResult = new OSFormView() { OSs = result, Servicos = await _servicoService.FindAllAsync() };
             return View(result);
         }
 
