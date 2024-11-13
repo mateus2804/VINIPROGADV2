@@ -4,3 +4,4 @@
 <h2>no PACKAGER MANAGER CONSOLE: </h2><br>
 <h3>Add-Migration (nome da migration) </h3><br>
 <h3>Update-Database </h3><br>
+<h3>!Adicionar autoincrement pelo mysql workbench</h3><br>
